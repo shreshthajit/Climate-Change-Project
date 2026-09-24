@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" translate="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="google" content="notranslate" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="National Climate Adaptation Inventory & Web Visualization Platform — demo prototype" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Condensed:wght@700;800&family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet" />
+    <title>Climate Adaptation Inventory</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      window.addEventListener('error', function (e) {
+        var root = document.getElementById('root')
+        if (root && !root.children.length) {
+          root.innerHTML = '<div style="font-family:sans-serif;padding:32px;text-align:center">' +
+            '<h2>Page failed to load</h2><p style="color:#545454">' + String(e.message || 'Script error') + '</p>' +
+            '<button onclick="location.reload()" style="padding:10px 20px;background:#44841a;color:#fff;border:0;border-radius:3px">Reload</button></div>'
+        }
+      })
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
